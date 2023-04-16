@@ -1,3 +1,7 @@
+from http import HTTPStatus
+
+from django.test import TestCase, Client
+
 class AboutURLTests(TestCase):
     def setUp(self):
         self.guest_client = Client()
