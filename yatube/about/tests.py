@@ -11,4 +11,3 @@ class AboutURLTests(TestCase):
         """URL /tech доступен."""
         response = self.guest_client.get('/about/tech/')
         self.assertEqual(response.status_code, HTTPStatus.OK)
-
