@@ -3,6 +3,7 @@ from django.test import Client, TestCase
 
 User = get_user_model()
 
+
 class userURLTests(TestCase):
     @classmethod
     def setUpClass(cls):
