@@ -1,12 +1,12 @@
 {% extends 'base.html' %} 
-{% block title %} Последние обновления на сайте {% endblock %}
+
+{% block title %} Посты авторов, на которых подписан {% endblock %}
+
 {% block content %}
 {% load thumbnail %}
 {% include 'posts/switcher.html' %}
-{% load cache %}
-{% cache 20 index_page %}
 <div class="container py-5">     
-  <h1>Последние обновления на сайте </h1>
+  <h1>Посты авторов, на которых подписан </h1>
   {% for post in page_obj %}
     <ul>
       <li>
@@ -22,7 +22,6 @@
     <p>
       {{ post.text }}
     </p>
-    <a href="{% url 'posts:post_detail' post.pk %}">подробная информация </a>
   {% if post.group %}
     <a href="{% url 'posts:group_list' post.group.slug %}">все записи группы</a>
   {% endif %} 
@@ -30,5 +29,4 @@
 {% endfor %} 
 {% include 'posts/paginator.html' %}
 </div>  
-{% endcache %} 
 {% endblock %}
